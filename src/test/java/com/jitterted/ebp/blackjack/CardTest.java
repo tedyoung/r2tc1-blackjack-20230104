@@ -7,9 +7,11 @@ import static org.fusesource.jansi.Ansi.ansi;
 
 class CardTest {
 
+    private static final Suit DUMMY_SUIT = Suit.HEARTS;
+
     @Test
     public void withNumberCardHasNumericValueOfTheNumber() throws Exception {
-        Card card = new Card("don't care", "7");
+        Card card = new Card(DUMMY_SUIT, "7");
 
         assertThat(card.rankValue())
                 .isEqualTo(7);
@@ -17,7 +19,7 @@ class CardTest {
 
     @Test
     public void withValueOfQueenHasNumericValueOf10() throws Exception {
-        Card card = new Card("don't care", "Q");
+        Card card = new Card(DUMMY_SUIT, "Q");
 
         assertThat(card.rankValue())
                 .isEqualTo(10);
@@ -25,7 +27,7 @@ class CardTest {
 
     @Test
     public void withAceHasNumericValueOf1() throws Exception {
-        Card card = new Card("don't care", "A");
+        Card card = new Card(DUMMY_SUIT, "A");
 
         assertThat(card.rankValue())
                 .isEqualTo(1);

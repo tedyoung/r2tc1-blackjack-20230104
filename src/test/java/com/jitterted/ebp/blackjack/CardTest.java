@@ -36,8 +36,8 @@ class CardTest {
     @Test
     public void suitOfHeartsOrDiamondsIsDisplayedInRed() throws Exception {
         // given a card with Hearts or Diamonds
-        Card heartsCard = new Card("♥", "10");
-        Card diamondsCard = new Card("♦", "8");
+        Card heartsCard = new Card(Suit.HEARTS, "10");
+        Card diamondsCard = new Card(Suit.DIAMONDS, "8");
 
         // when we ask for its display representation
         String ansiRedString = ansi().fgRed().toString();
@@ -51,7 +51,7 @@ class CardTest {
 
     @Test
     public void cardDisplaysSuitAsSymbol() throws Exception {
-        Card spadesCard = new Card("♠", "9");
+        Card spadesCard = new Card(Suit.SPADES, "9");
 
         assertThat(spadesCard.display())
                 .contains("│    ♠    │");

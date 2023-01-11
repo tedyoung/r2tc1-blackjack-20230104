@@ -12,7 +12,11 @@ public class Hand {
     public Hand() {
     }
 
-    public Hand(List<Card> cards) {
+    public static Hand createHandForTest(List<Card> cards) {
+        return new Hand(cards);
+    }
+
+    private Hand(List<Card> cards) {
         this.cards.addAll(cards);
     }
 

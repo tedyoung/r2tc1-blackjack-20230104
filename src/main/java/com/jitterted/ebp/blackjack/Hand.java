@@ -53,4 +53,20 @@ public class Hand {
     Card faceUpCard() {
         return cards.get(0);
     }
+
+    boolean isBusted() {
+        return value() > 21;
+    }
+
+    boolean shouldDealerHit() {
+        return value() <= 16;
+    }
+
+    boolean pushes(Hand hand) {
+        return value() == hand.value();
+    }
+
+    boolean beats(Hand hand) {
+        return hand.value() < value();
+    }
 }

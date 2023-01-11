@@ -9,6 +9,13 @@ import static org.fusesource.jansi.Ansi.ansi;
 public class Hand {
     private final List<Card> cards = new ArrayList<Card>();
 
+    public Hand() {
+    }
+
+    public Hand(List<Card> cards) {
+        this.cards.addAll(cards);
+    }
+
     void drawCardFrom(Deck deck) {
         cards.add(deck.draw());
     }

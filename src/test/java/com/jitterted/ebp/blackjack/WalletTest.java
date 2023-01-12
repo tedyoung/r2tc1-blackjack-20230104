@@ -32,5 +32,19 @@ public class WalletTest {
                 .isZero();
     }
 
+    @Test
+    public void addMoneyOf10ThenBalanceIs10() throws Exception {
+        // GIVEN/SETUP/ARRANGE
+        Wallet wallet = new Wallet();
+
+        // execute COMMAND
+        wallet.addMoney(10);
+
+        // assert against QUERY
+        assertThat(wallet.balance())
+                .isEqualTo(10);
+    }
+
+
 
 }

@@ -13,7 +13,7 @@ public class Game {
 
     private final Hand playerHand = new Hand();
     private final Hand dealerHand = new Hand();
-    private int balance = 0;
+    private int playerBalance = 0;
 
     public static void main(String[] args) {
 
@@ -178,6 +178,10 @@ public class Game {
     }
 
     public int playerBalance() {
-        return balance;
+        return playerBalance;
+    }
+
+    public void playerDeposits(int depositAmount) {
+        playerBalance += depositAmount;
     }
 }
